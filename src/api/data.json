@@ -21,5 +21,24 @@
       "children": [{ "id": 6, "name": "Child 1" }]
     },
     { "id": 3, "name": "Parent 3" }
+  ],
+
+  "treeData": [
+    { "id": 1, "is_folder": true, "open": false },
+    { "id": 2, "is_folder": false },
+    {
+      "id": 3,
+      "is_folder": true,
+      "open": true,
+      "children": [
+        { "id": 4, "is_folder": false },
+        {
+          "id": 5,
+          "is_folder": true,
+          "open": true,
+          "children": [{ "id": 6, "is_folder": false }]
+        }
+      ]
+    }
   ]
 }

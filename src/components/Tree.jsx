@@ -2,26 +2,7 @@ import { useState } from "react";
 import { VscChevronDown, VscChevronRight } from "react-icons/vsc";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 
-const Tree = () => {
-  const initialData = [
-    { id: 1, is_folder: true, open: false },
-    { id: 2, is_folder: false },
-    {
-      id: 3,
-      is_folder: true,
-      open: true,
-      children: [
-        { id: 4, is_folder: false },
-        {
-          id: 5,
-          is_folder: true,
-          open: true,
-          children: [{ id: 6, is_folder: false }],
-        },
-      ],
-    },
-  ];
-
+const Tree = ({ initialData }) => {
   const [data, setData] = useState(initialData);
 
   const handleAddNode = (node) => {
@@ -128,7 +109,11 @@ const Tree = () => {
           minHeight: "400px",
         }}
       >
-        {data.length ? rendertree(data) : <p style={{textAlign:"center"}}>"No Records found"</p>}
+        {data.length ? (
+          rendertree(data)
+        ) : (
+          <p style={{ textAlign: "center" }}>"No Records found"</p>
+        )}
       </div>
     </>
   );
